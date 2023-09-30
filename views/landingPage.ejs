@@ -1,0 +1,47 @@
+<%- include('partials/header.ejs') %>
+    <div id="section-container" class="container">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h5>Cat Picture Random Generator</h5>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Generate Now</h5>
+             <form action="/generate" method="POST">
+                <div class="input-group">
+                    <select name="numberOfPicture" class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                      <option selected disabled>How many pictures you want to generate?</option>
+                      <option value="1">One</option>
+                      <!-- <option value="2" >Two</option>
+                      <option value="3">Three</option>
+                      <option value="4">Four</option>
+                      <option value="5">Five</option>
+                      <option value="6">Six</option>
+                      <option value="7">Seven</option>
+                      <option value="8">Eight</option>
+                      <option value="9">Nine</option> -->
+                      <option value="10">Ten</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="submit">Generate Cat</button>
+                    </div>
+                  </div>
+             </form>
+             <% if(locals.data){%>
+                     <div class="container mt-2 cat-grid-container">
+                        <% data.forEach(data => { %>
+                        <div class="card">
+                            <img src="<%= data.url %>" class="card-img-top" alt="...">
+                        </div>
+                <% }); %> 
+            </div>
+            <% } %>
+            </div>
+          </div>
+    </div>
+ 
+    <div class="container">
+
+    </div>
+
+
+<%- include('partials/footer.ejs') %>
