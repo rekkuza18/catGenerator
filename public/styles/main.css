@@ -20,6 +20,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    align-items: start;
+    grid-template-rows: min-content auto min-content;
 }
 @media screen and (max-width: 768px) {
     .cat-grid-container{
@@ -35,7 +37,9 @@
     background-size: contain;
 }
 
-
+.download-btn{
+    border-radius: 0 !important;
+}
 
 .footer{
     margin-top: 25px;

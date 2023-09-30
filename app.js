@@ -16,7 +16,7 @@ app.post("/generate", async(req, res) => {
     const numberOfPic = req.body.numberOfPicture;
 
     try{
-        const APIdata = await axios.get(`https://api.thecatapi.com/v1/images/search?has_breeds=1&limit=${numberOfPic}`);
+        const APIdata = await axios.get(`https://api.thecatapi.com/v1/images/search?&limit=${numberOfPic}`);
         const result = APIdata.data;
         res.render("landingPage.ejs", {
             data: result

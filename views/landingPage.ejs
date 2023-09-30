@@ -27,13 +27,14 @@
                   </div>
              </form>
              <% if(locals.data){%>
-                     <div class="container mt-2 cat-grid-container">
+                <div class="container mt-2 cat-grid-container">
                         <% data.forEach(data => { %>
                         <div class="card">
-                            <img src="<%= data.url %>" class="card-img-top" alt="...">
+                            <a class="image-container" href="<%= data.url %>"><img src="<%= data.url %>" class="card-img-top"></a>
+                            <a href="<%= data.url %>" class="btn btn-primary btn-lg btn-block download-btn" target="_blank"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
                         </div>
                 <% }); %> 
-            </div>
+                </div>
             <% } %>
             </div>
           </div>
